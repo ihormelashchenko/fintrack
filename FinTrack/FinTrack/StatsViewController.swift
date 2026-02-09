@@ -2,7 +2,7 @@
 //  StatsViewController.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 9/4/21.
+//  Created by Ihor Melashchenko on 9/4/21.
 //
 
 import UIKit

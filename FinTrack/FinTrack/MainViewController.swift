@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 8/27/21.
+//  Created by Ihor Melashchenko on 8/27/21.
 //
 
 import UIKit

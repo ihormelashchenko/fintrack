@@ -473,7 +473,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prD-DU-KUY">
                                 <rect key="frame" x="82.000000000000014" y="718.66666666666663" width="238.33333333333337" height="54.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="App created by @mr_igor25 More info..." titleAlignment="center"/>
+                                <buttonConfiguration key="configuration" style="plain" title="App created by @baldeagle0125 More info..." titleAlignment="center"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="abj-vD-kJl"/>

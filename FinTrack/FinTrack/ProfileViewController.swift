@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 12/12/21.
+//  Created by Ihor Melashchenko on 12/12/21.
 //
 
 import UIKit

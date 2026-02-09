@@ -2,7 +2,7 @@
 //  TransactionTypes.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 12/4/21.
+//  Created by Ihor Melashchenko on 12/4/21.
 //
 
 import Foundation

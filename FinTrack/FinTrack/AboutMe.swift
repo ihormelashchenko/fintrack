@@ -2,7 +2,7 @@
 //  AboutMe.swift
 //  FinTrack
 //
-//  Created by Igor Melashchenko on 1/4/22.
+//  Created by Ihor Melashchenko on 1/4/22.
 //
 
 import UIKit
