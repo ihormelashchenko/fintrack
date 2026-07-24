@@ -17,11 +17,7 @@
 		A3D4B48F26D92FD900CE9067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */; };
 		A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */; };
 		A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */; };
-		A3D9C03827AEEA5E000A38E0 /* UserMainData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */; };
-		A3D9C03A27AEEA7D000A38E0 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */; };
-		A3D9C03C27AEEA88000A38E0 /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C03B27AEEA88000A38E0 /* UserStats.swift */; };
 		A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C04227AEF3AD000A38E0 /* Settings.swift */; };
-		A3D9C04627AEF42C000A38E0 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C04527AEF42C000A38E0 /* Stats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,11 +33,7 @@
 		A3D4B49026D92FD900CE9067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainData.swift; sourceTree = "<group>"; };
-		A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		A3D9C03B27AEEA88000A38E0 /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 		A3D9C04227AEF3AD000A38E0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		A3D9C04527AEF42C000A38E0 /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,22 +82,10 @@
 				A3D4B48D26D92FD900CE9067 /* LaunchScreen.storyboard */,
 				A3D4B48826D92FD600CE9067 /* Main.storyboard */,
 				A3D9C04027AEF294000A38E0 /* Settings */,
-				A3D9C04427AEF422000A38E0 /* Stats */,
 				A3D9C03F27AEF289000A38E0 /* Transaction */,
-				A3D9C03D27AEEA9D000A38E0 /* UserData */,
 				A35A9C9027AAEC270094BF0D /* ViewControllers */,
 			);
 			path = FinTrack;
-			sourceTree = "<group>";
-		};
-		A3D9C03D27AEEA9D000A38E0 /* UserData */ = {
-			isa = PBXGroup;
-			children = (
-				A3D9C03B27AEEA88000A38E0 /* UserStats.swift */,
-				A3D9C03927AEEA7D000A38E0 /* UserSettings.swift */,
-				A3D9C03727AEEA5D000A38E0 /* UserMainData.swift */,
-			);
-			path = UserData;
 			sourceTree = "<group>";
 		};
 		A3D9C03F27AEF289000A38E0 /* Transaction */ = {
@@ -122,14 +102,6 @@
 				A3D9C04227AEF3AD000A38E0 /* Settings.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		A3D9C04427AEF422000A38E0 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				A3D9C04527AEF42C000A38E0 /* Stats.swift */,
-			);
-			path = Stats;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +173,6 @@
 				A3D4B48726D92FD600CE9067 /* MainViewController.swift in Sources */,
 				A3D4B48326D92FD600CE9067 /* AppDelegate.swift in Sources */,
 				A32DCE64275BF0C900944280 /* Transaction.swift in Sources */,
-				A3D9C03A27AEEA7D000A38E0 /* UserSettings.swift in Sources */,
-				A3D9C04627AEF42C000A38E0 /* Stats.swift in Sources */,
-				A3D9C03C27AEEA88000A38E0 /* UserStats.swift in Sources */,
-				A3D9C03827AEEA5E000A38E0 /* UserMainData.swift in Sources */,
 				A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */,
 				A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */,
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,

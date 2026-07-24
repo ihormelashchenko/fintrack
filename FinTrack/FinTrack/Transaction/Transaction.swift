@@ -1,33 +1,43 @@
 import Foundation
 
-class Transaction {
-    static var transactionCategories: [String] = ["Food", "Health", "Bills", "Transport", "Pets", "Gifts", "Delivery", "Eating out", "Sports", "Entertainment", "Taxi", "Clothes"]
-    var category: String = transactionCategories[0]
-    var amount: String = "0"
-    var option: TransactionOption = .unknown
-    var date: String = "unknown date"
-    
+final class Transaction {
+    static var categories = [
+        "Food",
+        "Health",
+        "Bills",
+        "Transport",
+        "Pets",
+        "Gifts",
+        "Delivery",
+        "Eating out",
+        "Sports",
+        "Entertainment",
+        "Taxi",
+        "Clothes"
+    ]
+    static var latest: Transaction?
+
+    let category: String
+    let amount: String
+    let option: TransactionOption
+    let date: String
+
     init(category: String, amount: String, option: TransactionOption, date: String) {
         self.category = category
         self.amount = amount
         self.option = option
         self.date = date
     }
-    
-    // Get current date and time
+
     static func getDate() -> String {
-        // get the current date and time
-        let currentDate = Date()
-        // initialize the date formatter and
         let formatter = DateFormatter()
-        // set the style
         formatter.timeStyle = .medium
         formatter.dateStyle = .short
-        // return the date time String from the date object
-        return formatter.string(from: currentDate)
+        return formatter.string(from: Date())
     }
 }
 
 enum TransactionOption {
-    case income, expense, unknown
+    case income
+    case expense
 }
