@@ -2,29 +2,50 @@
 
 [![CI](https://github.com/ihormelashchenko/FinTrack/actions/workflows/ci.yml/badge.svg)](https://github.com/ihormelashchenko/FinTrack/actions/workflows/ci.yml)
 
-FinTrack is a UIKit iOS app for recording income and expenses, monitoring a
-running balance, and organising transactions by category.
+FinTrack is a focused UIKit app for recording everyday income and expenses. It
+provides a clear running balance, a persistent transaction history, flexible
+categories, and a native iOS 26 interface.
 
-> **Project status:** Currently paused. The repository remains buildable and documented, but no active feature development is planned.
+## What it does
 
-Transaction data is held in memory for the current app session and is not
-persisted between launches.
+- Records income and expense transactions with an amount, category, and date
+- Persists transaction history and custom categories between launches
+- Shows the current balance, income, expenses, and recent activity at a glance
+- Supports editing, swipe-to-delete, and confirmed bulk deletion
+- Includes built-in categories and user-created categories
+- Formats values in US dollars or euros
+- Follows the system appearance by default, with optional Light and Dark modes
+- Keeps all finance data locally on the device
 
-## Features
+## iOS 26 design
 
-- Record income and expense transactions
-- Track the current balance and latest transaction date
-- Categorise transactions with built-in or custom categories
-- Review and clear the in-session transaction log
-- Choose a language and currency preference in the settings interface
+FinTrack uses standard UIKit navigation, tab bars, menus, sheets, alerts, SF
+Symbols, semantic colours, and Dynamic Type. Liquid Glass is reserved for the
+primary transaction actions and system navigation layer so the content stays
+clear and familiar.
+
+The new Rising Track identity is supplied as an adaptive icon family:
+
+<p>
+  <img src="branding/fintrack-logo-light.png" width="150" alt="FinTrack Rising Track light icon">
+  <img src="branding/fintrack-logo-dark.png" width="150" alt="FinTrack Rising Track dark icon">
+  <img src="branding/fintrack-logo-tinted.png" width="150" alt="FinTrack Rising Track tinted icon">
+</p>
+
+- **Default/light:** translucent blue and teal glass on a luminous background
+- **Dark:** a higher-luminance mark on deep midnight navy
+- **Tinted:** a monochrome version for iOS tinted icon appearances
+
+See [Design and accessibility](docs/design-and-accessibility.md) for the design
+decisions and Human Interface Guidelines checklist.
 
 ## Screenshots
 
 <p>
-  <img src="https://user-images.githubusercontent.com/73532651/152638782-0de97282-0607-4883-beae-6f096f6e3ecc.png" width="220" alt="FinTrack balance and transaction entry screen">
-  <img src="https://user-images.githubusercontent.com/73532651/152638780-c89faf40-e64e-41a3-9f6e-143ad4131380.png" width="220" alt="FinTrack transaction log screen">
-  <img src="https://user-images.githubusercontent.com/73532651/152638778-96a04995-2d59-4822-899d-a629abb860e5.png" width="220" alt="FinTrack settings screen">
-  <img src="https://user-images.githubusercontent.com/73532651/152638775-f88c5dab-0e6b-42a2-bc80-af5322b78a1a.png" width="220" alt="FinTrack custom category screen">
+  <img src="docs/screenshots/overview.png" width="220" alt="FinTrack overview with a recorded income transaction">
+  <img src="docs/screenshots/transaction-editor.png" width="220" alt="FinTrack new transaction editor">
+  <img src="docs/screenshots/settings.png" width="220" alt="FinTrack settings in light mode">
+  <img src="docs/screenshots/settings-dark.png" width="220" alt="FinTrack settings in dark mode">
 </p>
 
 ## Requirements
@@ -32,7 +53,7 @@ persisted between launches.
 - macOS with Xcode 26 or later
 - iOS 26 or later
 
-## Run Locally
+## Run locally
 
 1. Clone the repository:
 
@@ -45,9 +66,11 @@ persisted between launches.
 3. Select the `FinTrack` scheme and an iPhone simulator or connected device.
 4. Build and run the app.
 
-The project has no third-party dependencies.
+The project has no third-party dependencies or account setup.
 
-## Verify the Project
+## Verify the project
+
+Build for the simulator:
 
 ```sh
 xcodebuild \
@@ -59,23 +82,35 @@ xcodebuild \
   build
 ```
 
-GitHub Actions runs the same build for pushes to `main` and for pull requests.
+Run the unit and interface tests with an installed iOS 26 simulator:
+
+```sh
+xcodebuild \
+  -project FinTrack/FinTrack.xcodeproj \
+  -scheme FinTrack \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+  CODE_SIGNING_ALLOWED=NO \
+  test
+```
+
+The shared scheme runs four finance-store tests and two end-to-end interface
+tests. GitHub Actions also builds the app for pushes to `main` and pull
+requests.
 
 ## Project structure
 
 ```text
 FinTrack/
-├── FinTrack.xcodeproj/
+├── branding/                         # Source logo appearances
+├── docs/
+│   ├── design-and-accessibility.md
+│   └── screenshots/
 └── FinTrack/
-    ├── Assets.xcassets/
-    ├── Base.lproj/
-    ├── Settings/
-    ├── Transaction/
-    └── ViewControllers/
+    ├── FinTrack.xcodeproj/
+    ├── FinTrack/                     # UIKit app and adaptive assets
+    ├── FinTrackTests/                # Finance model and persistence tests
+    └── FinTrackUITests/              # Core user-flow tests
 ```
-
-There is currently no automated test target; verification is performed by
-compiling the shared `FinTrack` scheme.
 
 ## Author
 

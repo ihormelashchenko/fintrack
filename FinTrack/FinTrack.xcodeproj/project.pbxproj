@@ -18,7 +18,27 @@
 		A3D7BB3A26E3E4AD0068B4C3 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */; };
 		A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */; };
 		A3D9C04327AEF3AD000A38E0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9C04227AEF3AD000A38E0 /* Settings.swift */; };
+		F10000012608130000000001 /* TransactionEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10000022608130000000001 /* TransactionEditorViewController.swift */; };
+		F20000012608130000000001 /* FinanceStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000022608130000000001 /* FinanceStoreTests.swift */; };
+		F30000012608130000000001 /* FinTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30000022608130000000001 /* FinTrackUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F20000032608130000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D4B47726D92FD600CE9067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3D4B47E26D92FD600CE9067;
+			remoteInfo = FinTrack;
+		};
+		F30000032608130000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A3D4B47726D92FD600CE9067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A3D4B47E26D92FD600CE9067;
+			remoteInfo = FinTrack;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A32DCE61275BE59B00944280 /* CustomCategoryManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryManagerViewController.swift; sourceTree = "<group>"; };
@@ -34,9 +54,28 @@
 		A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A3D9C04227AEF3AD000A38E0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F10000022608130000000001 /* TransactionEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEditorViewController.swift; sourceTree = "<group>"; };
+		F20000022608130000000001 /* FinanceStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceStoreTests.swift; sourceTree = "<group>"; };
+		F20000042608130000000001 /* FinTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30000022608130000000001 /* FinTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinTrackUITests.swift; sourceTree = "<group>"; };
+		F30000042608130000000001 /* FinTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F30000082608130000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000082608130000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3D4B47C26D92FD600CE9067 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
@@ -52,14 +91,33 @@
 				A3D4B48626D92FD600CE9067 /* MainViewController.swift */,
 				A3D7BB3B26E3E4B70068B4C3 /* SettingsViewController.swift */,
 				A3D7BB3926E3E4AD0068B4C3 /* StatsViewController.swift */,
+				F10000022608130000000001 /* TransactionEditorViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F20000052608130000000001 /* FinTrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				F20000022608130000000001 /* FinanceStoreTests.swift */,
+			);
+			path = FinTrackTests;
+			sourceTree = "<group>";
+		};
+		F30000052608130000000001 /* FinTrackUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F30000022608130000000001 /* FinTrackUITests.swift */,
+			);
+			path = FinTrackUITests;
 			sourceTree = "<group>";
 		};
 		A3D4B47626D92FD600CE9067 = {
 			isa = PBXGroup;
 			children = (
 				A3D4B48126D92FD600CE9067 /* FinTrack */,
+				F20000052608130000000001 /* FinTrackTests */,
+				F30000052608130000000001 /* FinTrackUITests */,
 				A3D4B48026D92FD600CE9067 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				A3D4B47F26D92FD600CE9067 /* FinTrack.app */,
+				F20000042608130000000001 /* FinTrackTests.xctest */,
+				F30000042608130000000001 /* FinTrackUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +167,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F30000062608130000000001 /* FinTrackUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F300000D2608130000000001 /* Build configuration list for PBXNativeTarget "FinTrackUITests" */;
+			buildPhases = (
+				F30000072608130000000001 /* Sources */,
+				F30000082608130000000001 /* Frameworks */,
+				F30000092608130000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F300000B2608130000000001 /* PBXTargetDependency */,
+			);
+			name = FinTrackUITests;
+			productName = FinTrackUITests;
+			productReference = F30000042608130000000001 /* FinTrackUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F20000062608130000000001 /* FinTrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F200000D2608130000000001 /* Build configuration list for PBXNativeTarget "FinTrackTests" */;
+			buildPhases = (
+				F20000072608130000000001 /* Sources */,
+				F20000082608130000000001 /* Frameworks */,
+				F20000092608130000000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F200000B2608130000000001 /* PBXTargetDependency */,
+			);
+			name = FinTrackTests;
+			productName = FinTrackTests;
+			productReference = F20000042608130000000001 /* FinTrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A3D4B47E26D92FD600CE9067 /* FinTrack */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3D4B49326D92FD900CE9067 /* Build configuration list for PBXNativeTarget "FinTrack" */;
@@ -151,11 +247,27 @@
 			projectRoot = "";
 			targets = (
 				A3D4B47E26D92FD600CE9067 /* FinTrack */,
+				F20000062608130000000001 /* FinTrackTests */,
+				F30000062608130000000001 /* FinTrackUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F30000092608130000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000092608130000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3D4B47D26D92FD600CE9067 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
@@ -167,6 +279,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F30000072608130000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30000012608130000000001 /* FinTrackUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F20000072608130000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F20000012608130000000001 /* FinanceStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A3D4B47B26D92FD600CE9067 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
@@ -178,9 +306,23 @@
 				A3D7BB3C26E3E4B70068B4C3 /* SettingsViewController.swift in Sources */,
 				A3D4B48526D92FD600CE9067 /* SceneDelegate.swift in Sources */,
 				A32DCE62275BE59B00944280 /* CustomCategoryManagerViewController.swift in Sources */,
+				F10000012608130000000001 /* TransactionEditorViewController.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F300000B2608130000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3D4B47E26D92FD600CE9067 /* FinTrack */;
+			targetProxy = F30000032608130000000001 /* PBXContainerItemProxy */;
+		};
+		F200000B2608130000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A3D4B47E26D92FD600CE9067 /* FinTrack */;
+			targetProxy = F20000032608130000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A3D4B48826D92FD600CE9067 /* Main.storyboard */ = {
@@ -202,6 +344,76 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F300000E2608130000000001 /* Debug configuration for PBXNativeTarget "FinTrackUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihormelashchenko.FinTrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FinTrack;
+			};
+			name = Debug;
+		};
+		F300000F2608130000000001 /* Release configuration for PBXNativeTarget "FinTrackUITests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihormelashchenko.FinTrackUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = FinTrack;
+			};
+			name = Release;
+		};
+		F200000E2608130000000001 /* Debug configuration for PBXNativeTarget "FinTrackTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihormelashchenko.FinTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinTrack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinTrack";
+			};
+			name = Debug;
+		};
+		F200000F2608130000000001 /* Release configuration for PBXNativeTarget "FinTrackTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ihormelashchenko.FinTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinTrack.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinTrack";
+			};
+			name = Release;
+		};
 		A3D4B49126D92FD900CE9067 /* Debug configuration for PBXProject "FinTrack" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,6 +593,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F300000D2608130000000001 /* Build configuration list for PBXNativeTarget "FinTrackUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F300000E2608130000000001 /* Debug configuration for PBXNativeTarget "FinTrackUITests" */,
+				F300000F2608130000000001 /* Release configuration for PBXNativeTarget "FinTrackUITests" */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F200000D2608130000000001 /* Build configuration list for PBXNativeTarget "FinTrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F200000E2608130000000001 /* Debug configuration for PBXNativeTarget "FinTrackTests" */,
+				F200000F2608130000000001 /* Release configuration for PBXNativeTarget "FinTrackTests" */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A3D4B47A26D92FD600CE9067 /* Build configuration list for PBXProject "FinTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

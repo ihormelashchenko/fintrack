@@ -7,7 +7,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        true
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-UITestReset") {
+            FinanceStore.shared.resetAllData()
+            AppSettings.shared.currency = .usd
+            AppSettings.shared.appearance = .system
+        }
+        #endif
+        return true
     }
 
     func application(
