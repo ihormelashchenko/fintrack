@@ -6,7 +6,7 @@ FinTrack is a focused UIKit app for recording everyday income and expenses. It
 provides a clear running balance, a persistent transaction history, flexible
 categories, and a native iOS 26 interface.
 
-> **Project status:** Complete.
+> **Project status:** Currently paused. The repository remains buildable and documented, but no active feature development is planned.
 
 ## What it does
 
