@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="26000" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tab-root">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tab-root">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="26000"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Overview-->
         <scene sceneID="overview-scene">
             <objects>
                 <viewController title="Overview" id="overview-controller" customClass="MainViewController" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="overview-view">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="overview-safe"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -22,24 +22,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="overview-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
+        <!--Overview-->
         <scene sceneID="overview-nav-scene">
             <objects>
                 <navigationController id="overview-nav" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Overview" image="house" catalog="system" selectedImage="house.fill" id="overview-tab"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="overview-bar"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="overview-bar">
+                        <rect key="frame" x="0.0" y="124" width="402" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
                     <connections>
                         <segue destination="overview-controller" kind="relationship" relationship="rootViewController" id="overview-root-segue"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="overview-nav-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
+        <!--Activity-->
         <scene sceneID="activity-scene">
             <objects>
                 <viewController title="Activity" id="activity-controller" customClass="StatsViewController" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="activity-view">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="activity-safe"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -48,24 +55,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="activity-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
+        <!--Activity-->
         <scene sceneID="activity-nav-scene">
             <objects>
                 <navigationController id="activity-nav" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Activity" image="list.bullet.rectangle" catalog="system" selectedImage="list.bullet.rectangle.fill" id="activity-tab"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="activity-bar"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="activity-bar">
+                        <rect key="frame" x="0.0" y="124" width="402" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
                     <connections>
                         <segue destination="activity-controller" kind="relationship" relationship="rootViewController" id="activity-root-segue"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="activity-nav-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
+        <!--Settings-->
         <scene sceneID="settings-scene">
             <objects>
-                <tableViewController title="Settings" style="insetGrouped" id="settings-controller" customClass="SettingsViewController" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="settings-controller" customClass="SettingsViewController" customModule="FinTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="settings-table">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <connections>
@@ -77,23 +91,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="settings-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138" y="95"/>
         </scene>
+        <!--Settings-->
         <scene sceneID="settings-nav-scene">
             <objects>
                 <navigationController id="settings-nav" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" selectedImage="gearshape.fill" id="settings-tab"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="settings-bar"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="settings-bar">
+                        <rect key="frame" x="0.0" y="124" width="402" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
                     <connections>
                         <segue destination="settings-controller" kind="relationship" relationship="rootViewController" id="settings-root-segue"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="settings-nav-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="tab-scene">
             <objects>
                 <tabBarController id="tab-root" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="tab-bar"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tab-bar">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </tabBar>
                     <connections>
                         <segue destination="overview-nav" kind="relationship" relationship="viewControllers" id="tab-overview-segue"/>
                         <segue destination="activity-nav" kind="relationship" relationship="viewControllers" id="tab-activity-segue"/>
@@ -102,17 +126,18 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tab-first-responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="668" y="95"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="119"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="119"/>
-        <image name="house" catalog="system" width="128" height="113"/>
-        <image name="house.fill" catalog="system" width="128" height="113"/>
-        <image name="list.bullet.rectangle" catalog="system" width="128" height="91"/>
-        <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="91"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="list.bullet.rectangle.fill" catalog="system" width="128" height="93"/>
         <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
