@@ -1,4 +1,5 @@
 import XCTest
+import UIKit
 @testable import FinTrack
 
 final class FinanceStoreTests: XCTestCase {
@@ -73,5 +74,45 @@ final class FinanceStoreTests: XCTestCase {
         XCTAssertEqual(MoneyInput.decimal(from: " 9 "), 9)
         XCTAssertNil(MoneyInput.decimal(from: ""))
         XCTAssertNil(MoneyInput.decimal(from: "not money"))
+    }
+}
+
+@MainActor
+final class OverviewLayoutTests: XCTestCase {
+    func testActionButtonsReflowWhenTextSizeChanges() throws {
+        let controller = MainViewController()
+        let scene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
+        let window = UIWindow(windowScene: scene)
+        window.frame = CGRect(x: 0, y: 0, width: 402, height: 874)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+        defer { window.isHidden = true }
+
+        func descendants(of view: UIView) -> [UIView] {
+            view.subviews.flatMap { [$0] + descendants(of: $0) }
+        }
+        let buttons = descendants(of: controller.view).compactMap { $0 as? UIButton }
+        let expense = try XCTUnwrap(buttons.first { $0.configuration?.title == "Add Expense" })
+        let income = try XCTUnwrap(buttons.first { $0.configuration?.title == "Add Income" })
+
+        controller.traitOverrides.preferredContentSizeCategory = .large
+        controller.view.layoutIfNeeded()
+        let normalExpense = expense.convert(expense.bounds, to: controller.view)
+        let normalIncome = income.convert(income.bounds, to: controller.view)
+        XCTAssertEqual(normalExpense.minY, normalIncome.minY, accuracy: 1)
+        XCTAssertGreaterThan(normalIncome.minX, normalExpense.minX)
+
+        controller.traitOverrides.preferredContentSizeCategory = .accessibilityExtraExtraExtraLarge
+        controller.view.layoutIfNeeded()
+        let largeExpense = expense.convert(expense.bounds, to: controller.view)
+        let largeIncome = income.convert(income.bounds, to: controller.view)
+        XCTAssertGreaterThanOrEqual(largeIncome.minY, largeExpense.maxY)
+        XCTAssertEqual(largeExpense.minX, largeIncome.minX, accuracy: 1)
+        XCTAssertGreaterThan(largeExpense.width, normalExpense.width)
+
+        controller.traitOverrides.preferredContentSizeCategory = .large
+        controller.view.layoutIfNeeded()
+        XCTAssertEqual(expense.convert(expense.bounds, to: controller.view).minY,
+                       income.convert(income.bounds, to: controller.view).minY, accuracy: 1)
     }
 }

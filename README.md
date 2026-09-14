@@ -4,7 +4,7 @@
 
 FinTrack is a focused UIKit app for recording everyday income and expenses. It
 provides a clear running balance, a persistent transaction history, flexible
-categories, and a native iOS 26 interface.
+categories, and a native interface supporting iOS 26 and iOS 27.
 
 > **Project status:** Currently paused. The repository remains buildable and documented, but no active feature development is planned.
 
@@ -19,7 +19,7 @@ categories, and a native iOS 26 interface.
 - Follows the system appearance by default, with optional Light and Dark modes
 - Keeps all finance data locally on the device
 
-## iOS 26 design
+## Native iOS design
 
 FinTrack uses standard UIKit navigation, tab bars, menus, sheets, alerts, SF
 Symbols, semantic colours, and Dynamic Type. Liquid Glass is reserved for the
@@ -52,8 +52,8 @@ decisions and Human Interface Guidelines checklist.
 
 ## Requirements
 
-- macOS with Xcode 26 or later
-- iOS 26 or later
+- macOS with Xcode 27 for iOS 27 development and verification
+- iOS 26 or later (the minimum deployment target remains iOS 26.0)
 
 ## Run locally
 
@@ -84,20 +84,34 @@ xcodebuild \
   build
 ```
 
-Run the unit and interface tests with an installed iOS 26 simulator:
+Run the unit and interface tests on **both** an iOS 26 and an iOS 27 simulator.
+List installed devices and choose a device identifier for each runtime:
 
 ```sh
+xcrun simctl list devices available
 xcodebuild \
   -project FinTrack/FinTrack.xcodeproj \
   -scheme FinTrack \
-  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+  -destination 'platform=iOS Simulator,id=<SIMULATOR-UUID>' \
+  -parallel-testing-enabled NO \
+  -derivedDataPath /tmp/fintrack-verification \
+  -resultBundlePath '/tmp/fintrack-tests-<OS-VERSION>.xcresult' \
   CODE_SIGNING_ALLOWED=NO \
   test
 ```
 
-The shared scheme runs four finance-store tests and two end-to-end interface
-tests. GitHub Actions also builds the app for pushes to `main` and pull
-requests.
+Replace the placeholders and use a fresh result bundle path for each run. Install
+missing runtimes through Xcode Settings > Components. For release verification,
+repeat the build with `-configuration Release` and also build with
+`-destination 'generic/platform=iOS'` for devices.
+
+The shared scheme runs four finance-store tests, one live text-size layout
+regression test, and two end-to-end interface tests. GitHub Actions builds using
+the default Xcode on its `macos-26` runner; this does not by itself establish
+iOS 27 runtime compatibility.
+
+See [iOS compatibility verification](docs/ios-compatibility.md) for the tested
+toolchain, results, and remaining checks.
 
 ## Project structure
 

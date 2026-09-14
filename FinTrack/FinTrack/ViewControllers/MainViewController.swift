@@ -24,8 +24,16 @@ final class MainViewController: UIViewController {
 
         configureLayout()
         configureNotifications()
+        registerForTraitChanges([UITraitPreferredContentSizeCategory.self]) { (controller: MainViewController, _) in
+            controller.updateAdaptiveLayout()
+        }
         updateAdaptiveLayout()
         refresh()
+    }
+
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        updateAdaptiveLayout()
     }
 
     deinit {
@@ -184,15 +192,9 @@ final class MainViewController: UIViewController {
     private func configureNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: FinanceStore.didChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: AppSettings.didChangeNotification, object: nil)
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(updateAdaptiveLayout),
-            name: UIContentSizeCategory.didChangeNotification,
-            object: nil
-        )
     }
 
-    @objc private func updateAdaptiveLayout() {
+    private func updateAdaptiveLayout() {
         let usesAccessibleText = traitCollection.preferredContentSizeCategory.isAccessibilityCategory
         totalsStack.axis = usesAccessibleText ? .vertical : .horizontal
         actionsStack.axis = usesAccessibleText ? .vertical : .horizontal
